@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🏥 MediHistory — Patient Medical Records Management System
 
 A web-based medical records management system that enables **hospitals** and **patients** to securely manage, access, and track medical history through OTP-verified authentication.
@@ -212,3 +213,6 @@ The landing page provides four options:
 ## License
 
 This project is licensed under the [ISC License](https://opensource.org/licenses/ISC).
+=======
+# MediHistory
+>>>>>>> d225c6717abcf58f2bd45741d6909491b73ab33d
