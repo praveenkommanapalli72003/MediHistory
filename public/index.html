@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management - MediHistory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body class="landing-page">
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+            <div class="contact-info">
+                <span><i class="fas fa-phone-alt"></i> +1-123-556-5523</span>
+                <span><i class="fas fa-envelope"></i> support@example.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="main-navbar">
+        <div class="navbar-container">
+            <a href="/" class="brand-logo">
+                <span class="text-blue">Hospital</span> <span class="text-dark">Management</span>
+            </a>
+            <div class="nav-menu">
+                <a href="#" class="active">Home</a>
+
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Portals <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="patient_signin.html">Patient Login</a>
+                        <a href="patient_signup.html">Patient Sign Up</a>
+                        <a href="hospital_signin.html">Hospital Login</a>
+                        <a href="hospital_signup.html">Hospital Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <a href="#" class="menu-icon"><i class="fas fa-bars"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Your Partner In Health and Wellness</h1>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using</p>
+                <a href="patient_signup.html" class="btn-primary">BOOK AN APPOINTMENT</a>
+            </div>
+            <div class="hero-image">
+                <!-- Generating a placeholder image using a service or keeping it empty to let the CSS handle background -->
+                <div class="doctor-image-wrapper">
+                    <div class="decorative-element plus-1"><i class="fas fa-plus"></i></div>
+                    <div class="decorative-element plus-2"><i class="fas fa-plus"></i></div>
+                    <div class="decorative-element plus-3"><i class="fas fa-plus"></i></div>
+                    <img src="doctor_hero.png" alt="Female Doctor" class="doctor-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portals Section -->
+    <section class="services-section">
+        <div class="services-header">
+            <h2>Access Portals</h2>
+            <p>MediHistory is an advanced hospital management and secure medical records platform. Choose a portal below to access your account or register a new one.</p>
+        </div>
+        <div class="services-grid" style="justify-content: center;">
+            <a href="patient_signin.html" class="service-card" style="text-decoration: none; color: white; cursor: pointer;">
+                <div class="icon-circle"><i class="fas fa-user-lock"></i></div>
+                <div class="service-info">
+                    <h3 style="color: white;">Patient Login</h3>
+                    <p style="color: white;">Access your medical records and appointments.</p>
+                </div>
+            </a>
+            <a href="patient_signup.html" class="service-card" style="text-decoration: none; color: white; cursor: pointer;">
+                <div class="icon-circle"><i class="fas fa-user-plus"></i></div>
+                <div class="service-info">
+                    <h3 style="color: white;">Patient Sign Up</h3>
+                    <p style="color: white;">Create a new patient account to get started.</p>
+                </div>
+            </a>
+            <a href="hospital_signin.html" class="service-card" style="text-decoration: none; color: white; cursor: pointer;">
+                <div class="icon-circle"><i class="fas fa-hospital-user"></i></div>
+                <div class="service-info">
+                    <h3 style="color: white;">Hospital Login</h3>
+                    <p style="color: white;">Manage your hospital and access patient data.</p>
+                </div>
+            </a>
+            <a href="hospital_signup.html" class="service-card" style="text-decoration: none; color: white; cursor: pointer;">
+                <div class="icon-circle"><i class="fas fa-clinic-medical"></i></div>
+                <div class="service-info">
+                    <h3 style="color: white;">Hospital Sign Up</h3>
+                    <p style="color: white;">Register your hospital with MediHistory.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+</body>
+</html>

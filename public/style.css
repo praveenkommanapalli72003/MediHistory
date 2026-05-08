@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;background:url('hospital_image.png') no-repeat center center fixed;background-size:cover;position:relative;overflow-x:hidden;padding-top:80px}
+body::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,15,30,.85),rgba(15,25,50,.75),rgba(0,80,120,.5));z-index:0}
+.navbar { position: fixed; top: 0; left: 0; width: 100%; height: 70px; background: rgba(10, 15, 30, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; }
+.navbar-brand { display: flex; align-items: center; gap: 10px; color: #fff; font-size: 1.5em; font-weight: 700; text-decoration: none; }
+.navbar-brand span { color: #00d4aa; }
+.nav-links { display: flex; gap: 20px; }
+.nav-link { color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: 0.95em; font-weight: 500; transition: color 0.3s; padding: 8px 16px; border-radius: 8px; }
+.nav-link:hover { color: #00d4aa; background: rgba(255, 255, 255, 0.05); }
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.3;z-index:0;animation:float 8s ease-in-out infinite}
+.orb-1{width:300px;height:300px;background:#00d4aa;top:-50px;left:-80px}
+.orb-2{width:250px;height:250px;background:#0099ff;bottom:-60px;right:-60px;animation-delay:3s}
+@keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+.container{position:relative;z-index:1;background:rgba(255,255,255,.08);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:44px 40px;width:90%;max-width:500px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.3);animation:slideUp .7s cubic-bezier(.16,1,.3,1) forwards;opacity:0;transform:translateY(30px); margin: auto; margin-bottom: 40px;}
+@keyframes slideUp{to{opacity:1;transform:translateY(0)}}
+h1{font-size:1.5em;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-.5px}
+h2{font-size:1.1em;font-weight:600;color:rgba(255,255,255,.7);margin:20px 0 10px}
+h3{font-size:.95em;font-weight:600;color:rgba(255,255,255,.6);margin:18px 0 8px}
+p,.subtitle{font-size:.85em;color:rgba(255,255,255,.5);margin-bottom:20px}
+a{color:#00d4aa;text-decoration:none;transition:color .3s}
+a:hover{color:#4dffcf}
+.input-field,input[type=text],input[type=tel],input[type=password],input[type=number],input[type=date]{width:100%;padding:13px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#fff;font-family:'Inter',sans-serif;font-size:.95em;transition:all .3s;outline:none;margin-bottom:12px}
+input::placeholder{color:rgba(255,255,255,.3)}
+input:focus{border-color:#00d4aa;background:rgba(0,212,170,.06);box-shadow:0 0 0 3px rgba(0,212,170,.1)}
+.button,button[type=submit]{width:100%;padding:14px 24px;border:none;border-radius:14px;cursor:pointer;font-family:'Inter',sans-serif;font-size:1em;font-weight:600;background:linear-gradient(135deg,#00d4aa,#00b894);color:#0a1628;box-shadow:0 4px 15px rgba(0,212,170,.25);transition:all .3s cubic-bezier(.16,1,.3,1);margin:8px 0;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.button:hover,button[type=submit]:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(0,212,170,.4)}
+.button:active,button[type=submit]:active{transform:scale(.98)}
+.btn-danger{background:linear-gradient(135deg,#ff6b6b,#ee5a24);color:#fff;box-shadow:0 4px 15px rgba(255,107,107,.25)}
+.btn-danger:hover{box-shadow:0 6px 25px rgba(255,107,107,.4)}
+.btn-secondary{background:linear-gradient(135deg,#0099ff,#0077cc);color:#fff;box-shadow:0 4px 15px rgba(0,153,255,.25)}
+.btn-secondary:hover{box-shadow:0 6px 25px rgba(0,153,255,.4)}
+table{width:100%;border-collapse:collapse;margin:12px 0;border-radius:12px;overflow:hidden}
+th{background:rgba(0,212,170,.15);color:#00d4aa;padding:12px 10px;font-size:.75em;font-weight:600;text-transform:uppercase;letter-spacing:.5px;text-align:left}
+td{padding:11px 10px;color:rgba(255,255,255,.8);font-size:.85em;border-bottom:1px solid rgba(255,255,255,.06)}
+tr:hover td{background:rgba(255,255,255,.03)}
+.info-badge{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:8px 16px;background:rgba(0,212,170,.1);border:1px solid rgba(0,212,170,.2);border-radius:20px;font-size:.75em;color:#00d4aa;font-weight:500}
+.back-link{display:inline-flex;align-items:center;gap:4px;color:rgba(255,255,255,.5);font-size:.85em;font-weight:500;margin-bottom:16px}
+.back-link:hover{color:#00d4aa}
+form{text-align:left}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management Sign In — MediHistory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('hospital_image.png') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10, 15, 30, 0.85), rgba(15, 25, 50, 0.75), rgba(0, 80, 120, 0.5));
+            z-index: 0;
+        }
+
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.3; z-index: 0; animation: float 8s ease-in-out infinite; }
+        .orb-1 { width: 300px; height: 300px; background: #00d4aa; top: -50px; left: -80px; }
+        .orb-2 { width: 250px; height: 250px; background: #0099ff; bottom: -60px; right: -60px; animation-delay: 3s; }
+        @keyframes float { 0%, 100% { transform: translateY(0px) scale(1); } 50% { transform: translateY(-30px) scale(1.05); } }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: 44px 40px;
+            width: 90%;
+            max-width: 460px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            animation: slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .back-link:hover { color: #00d4aa; }
+
+        .logo-icon {
+            width: 56px; height: 56px;
+            margin: 0 auto 14px;
+            background: linear-gradient(135deg, #00d4aa, #0099ff);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 20px rgba(0, 212, 170, 0.3);
+        }
+
+        .container h1 {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.75em;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 13px 16px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95em;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .input-field::placeholder { color: rgba(255, 255, 255, 0.3); }
+
+        .input-field:focus {
+            border-color: #00d4aa;
+            background: rgba(0, 212, 170, 0.06);
+            box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
+        }
+
+        .button {
+            width: 100%;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            font-weight: 600;
+            background: linear-gradient(135deg, #00d4aa, #00b894);
+            color: #0a1628;
+            box-shadow: 0 4px 15px rgba(0, 212, 170, 0.25);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 212, 170, 0.4);
+        }
+
+        .button:active { transform: scale(0.98); }
+
+        .info-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 20px;
+            padding: 8px 16px;
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            border-radius: 20px;
+            font-size: 0.75em;
+            color: #00d4aa;
+            font-weight: 500;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">🏥 Medi<span>History</span></a>
+        <div class="nav-links">
+            <a href="hospital_signup.html" class="nav-link">Hospital Portal</a>
+            <a href="patient_signup.html" class="nav-link">Patient Portal</a>
+        </div>
+    </nav>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="container">
+        <a href="/" class="back-link">← Back</a>
+        <div class="logo-icon">🏥</div>
+        <h1>Hospital Sign In</h1>
+        <p class="subtitle">Access your hospital management dashboard</p>
+        <form action="/hospital_signin_step1" method="POST">
+            <div class="form-group">
+                <label class="form-label">Registered Mobile Number</label>
+                <input type="tel" name="hospital_phone_number" class="input-field" placeholder="Enter your registered number" required>
+            </div>
+            <button type="submit" class="button">📲 Send OTP</button>
+        </form>
+        <div class="info-badge">🔒 OTP will be sent to your registered number</div>
+    </div>
+</body>
+</html>
